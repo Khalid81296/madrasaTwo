@@ -1,0 +1,9 @@
+dbname : darulins_portal
+user: darulins_portal
+pass: Qz*OTO]+QuuP
+
+
+FTP Username: portal@portal.darul-insan.org
+FTP server: ftp.darul-insan.org
+FTP & explicit FTPS port:  21
+pass: v^yXZEHjoUFh
