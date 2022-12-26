@@ -187,7 +187,7 @@
                                 <label for="year_admitted">Year Admitted: <span class="text-danger">*</span></label>
                                 <select data-placeholder="Choose..." required name="year_admitted" id="year_admitted" class="select-search form-control">
                                     <option value=""></option>
-                                    @for($y=date('Y', strtotime('- 10 years')); $y<=date('Y'); $y++)
+                                    @for($y=date('Y', strtotime('- 10 years')); $y<=date('Y', strtotime('+ 1 years')); $y++)
                                         <option {{ (old('year_admitted') == $y) ? 'selected' : '' }} value="{{ $y }}">{{ $y }}</option>
                                     @endfor
                                 </select>
