@@ -113,7 +113,7 @@ class NoticeController extends Controller
                 // return $mobile;
             }
             $message = $nTitle  ."\n". $ndescription."\n". 'দারুল ইনসান মাদরাসা';
-            $this->send_sms($mobile, $message);
+            // $this->send_sms($mobile, $message);
             // return $mobile;
         }
 
