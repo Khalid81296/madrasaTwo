@@ -76,7 +76,6 @@
                 </div>
             @endif
             <div id="ajax-alert" style="display: none"></div>
-
             @yield('content')
         </div>
 
@@ -87,7 +86,7 @@
 @include('partials.inc_bottom')
 @yield('scripts')
 <script>
-    var date2 = new Date('2022-12-31');
+    var date2 = new Date('2023-03-30');
     var datenow = new Date();
     // if(date2 >= datenow){
     //     console.log('true');

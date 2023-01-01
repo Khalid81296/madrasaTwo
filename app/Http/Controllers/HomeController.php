@@ -37,17 +37,49 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        // return 'mk';
-        // UserID: darulinsan
-        // Passwrd: FTXCZW4N
-        // $text = 'জারীকারক, রিকুইজিশন দাখিলকারী/আবেদনকারীদের প্রোফাইলে মোবাইল নাম্বার ম্যান্ডাটরি ফিল্ড হিসাবে থাকবে, ই-মেইল অপশনাল ফিল্ড হিসাবে থাকবে। ঋণ গ্রহিতার রিভিউয়ের স্থলে ঋন গ্রহিতার আপিল হবে।';
-        // $smsresult = file_get_contents("http://66.45.237.70/api.php?username=darulinsan&password=FTXCZW4N&number=8801689322376&message=$text");
-        // return $smsresult;
         $d=[];
         if(Qs::userIsTeamSAT()){
-            $d['users'] = $this->user->getAll();
+            // $d['users'] = $this->user->getAll();
+        
+            $d['total_student'] = DB::table('users')
+                ->join('student_records', 'users.id', '=', 'student_records.user_id')
+                ->where('users.user_type','student')
+                ->where('student_records.grad',0)
+                ->count();
+        
+            $d['total_male_student'] = DB::table('users')
+                ->join('student_records', 'users.id', '=', 'student_records.user_id')
+                ->where('users.user_type','student')
+                ->where('users.gender','Male')
+                ->where('student_records.grad',0)
+                ->count();
+        
+            $d['total_female_student'] = DB::table('users')
+                ->join('student_records', 'users.id', '=', 'student_records.user_id')
+                ->where('users.user_type','student')
+                ->where('users.gender','Female')
+                ->where('student_records.grad',0)
+                ->count();
+        
+            $d['total_badrin'] = DB::table('users')
+                ->where('users.user_type','badrin')
+                ->count();
+        
+            $d['total_teacher'] = DB::table('users')
+                ->where('users.user_type','teacher')
+                ->count();
+        
+            $d['total_admin'] = DB::table('users')
+                ->where('users.user_type','admin')
+                ->count();
+        
+            $d['total_parents'] = DB::table('users')
+                ->where('users.user_type','parent')
+                ->count();
+
         }
         // return $d;
+
         return view('pages.support_team.dashboard', $d);
     }
 }
