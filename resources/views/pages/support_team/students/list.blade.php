@@ -75,7 +75,8 @@
                 </div>
 
                 @foreach($sections as $se)
-                    <div class="tab-pane fade" id="s{{$se->id}}">                         <table class="table datatable-button-html5-columns">
+                    <div class="tab-pane fade" id="s{{$se->id}}">                         
+                        <table class="table datatable-button-html5-columns">
                             <thead>
                             <tr>
                                 <th>S/N</th>
@@ -112,7 +113,7 @@
                                                     {{--Delete--}}
                                                     @if(Qs::userIsSuperAdmin())
                                                         <a id="{{ Qs::hash($sr->user->id) }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> Delete</a>
-                                                        <form method="post" id="item-delete-{{ Qs::hash($sr->user->id) }}" action="{{ route('students.destroy', Qs::hash($sr->user->id)) }}" class="hidden">@csrf @method('delete')</form>
+                                                        <form method="post" id="item-delete-{{ Qs::hash($sr->user->id) }}" action="{{ route('students.delete', Qs::hash($sr->user->id)) }}" class="hidden">@csrf @method('delete')</form>
                                                     @endif
 
                                                 </div>
