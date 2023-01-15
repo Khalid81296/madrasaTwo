@@ -75,7 +75,7 @@ class BadrinPaymentRecordController extends Controller
             $amount = $payment->amt_paid;
             $message = $amount . ' টাকা মাসিক চাঁদা প্রদানের জন্য আল্লাহ তায়ালা আপনাকে অতি উত্তম বিনিময় দান করুক।'."\n".'দারুল ইনসান মাদরাসা';
             // return $message;     
-            $this->send_sms($mobile, $message);
+            // $this->send_sms($mobile, $message);
         }
         return redirect()->route('badrinPayment.index');
     }

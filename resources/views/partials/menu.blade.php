@@ -242,7 +242,7 @@
 
                 {{-- Manage Badrins --}}
                 @if (Qs::userIsTeamSAT())
-                    <li
+                    <!-- <li
                         class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['badrins.create', 'badrins.list', 'badrins.edit', 'badrins.show']) ? 'nav-item-expanded nav-item-open' : '' }} ">
                         <a href="#" class="nav-link"><i class="icon-users"></i> <span> Badrins</span></a>
 
@@ -276,7 +276,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li> -->
                 @endif
 
                 @if (Qs::userIsTeamSA())

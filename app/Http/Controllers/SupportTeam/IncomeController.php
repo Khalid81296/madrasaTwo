@@ -43,7 +43,7 @@ class IncomeController extends Controller
             $amount = $income->amount;
             $message = $amount . ' টাকা ' .$catName  .' প্রদানের জন্য আল্লাহ তায়ালা আপনাকে অতি উত্তম বিনিময় দান করুক।'."\n".'দারুল ইনসান মাদরাসা';
             // return $message;     
-            $this->send_sms($mobile, $message);
+            // $this->send_sms($mobile, $message);
         }
         return redirect()->route('incomes.index');
     }

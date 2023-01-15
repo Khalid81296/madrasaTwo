@@ -120,7 +120,7 @@ class SmsManagementController extends Controller
             }
             $message = $nTitle  ."\n". $ndescription."\n". 'দারুল ইনসান মাদরাসা';
             // return $mobile;
-            $this->send_sms($mobile, $message);
+            // $this->send_sms($mobile, $message);
             
         }
 
