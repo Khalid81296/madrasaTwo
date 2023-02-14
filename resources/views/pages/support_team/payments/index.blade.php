@@ -81,8 +81,8 @@
                                     <td>{{ $p->title }}</td>
                                     <td>{{ $p->amount }}</td>
                                     <td>{{ $p->ref_no }}</td>
-                                    <td>{{ $p->my_class_id ?? '' }}</td>
-                                    {{-- <td>{{ $p->my_class_id ? $p->my_class->name : '' }}</td> --}}
+                                    {{-- <td>{{ $p->my_class_id ?? '' }}</td> --}}
+                                    <td>{{ $p->my_class_id ? $p->my_class->name : '' }}</td>
                                     <td>{{ ucwords($p->method) }}</td>
                                     <td>{{ $p->description }}</td>
                                     <td class="text-center">
